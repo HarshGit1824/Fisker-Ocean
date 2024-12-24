@@ -1,20 +1,21 @@
-import React from 'react'
-
-export const metadata = {
-    title: 'Next.Js',
-    description:'Working in NextJs',
-}
-const page = () => {
+"use client";
+import Header from "@/components/Header";
+import Preview from "@/components/Preview";
+import Configurator from "@/components/Configurator";
+function Home() {
   return (
-    <html>
-        <head>
-            <title></title>
-        </head>
-        <body>
-            <h1>Next.Js</h1>
-        </body>
-    </html>
-  )
+    <div onContextMenu={(e) => e.preventDefault()} className="min-h-screen">
+      <Header />
+      <main className="mx-auto flex max-w-7xl flex-col gap-2 px-2 sm:flex-row sm:gap-4">
+        <section className="w-full bg-red-300 sm:w-3/4">
+          <Preview />
+        </section>
+        <section className="w-full bg-green-300 sm:w-1/4">
+          <Configurator />
+        </section>
+      </main>
+    </div>
+  );
 }
 
-export default page
+export default Home;
