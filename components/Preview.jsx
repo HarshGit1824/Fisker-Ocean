@@ -1,7 +1,11 @@
 import Zoom from "react-medium-image-zoom";
+import { imageMap } from "@/lib/imageMap";
 import "react-medium-image-zoom/dist/styles.css";
 import Image from "next/image";
-function Preview() {
+
+// exterior: "Black Pearl"
+// wheel: "Slipstream"
+function Preview({ exterior, wheel, interior }) {
   return (
     <>
       {/* Exterior Image */}
