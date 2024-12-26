@@ -1,5 +1,5 @@
 import Zoom from "react-medium-image-zoom";
-import { imageMap } from "@/lib/imageMap";
+import { imageMap, interiorMap } from "@/lib/imageMap";
 import "react-medium-image-zoom/dist/styles.css";
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ function Preview({ exterior, wheel, interior }) {
       {/* Exterior Image */}
       <Zoom>
         <Image
-          src="/slipstream_black.webp"
+          src={imageMap[exterior].wheels[wheel]}
           alt=""
           width={0}
           height={0}
@@ -21,13 +21,14 @@ function Preview({ exterior, wheel, interior }) {
       </Zoom>
       {/* Exterior Description */}
       <section className="my-4 pl-2">
-        <h3 className="text-2xl font-bold">Metallic Gloss</h3>
-        <p>A rich and luxurious interior with a modern and sleek design.</p>
+        <h3 className="text-2xl font-bold">{imageMap[exterior].finish}</h3>
+        <p>{imageMap[exterior].description}</p>
       </section>
+
       {/* Interior Image */}
       <Zoom>
         <Image
-          src="/slipstream_black.webp"
+          src={interiorMap[interior]}
           alt=""
           width={0}
           height={0}
@@ -35,9 +36,11 @@ function Preview({ exterior, wheel, interior }) {
           className="h-96 w-full rounded-lg object-cover sm:h-[500px]"
         />
       </Zoom>
+      {/* Interior Description */}
+      <section className="my-4 pl-2">
+        <h3 className="text-2xl font-bold">Interior {interior}</h3>
+      </section>
     </>
   );
 }
 export default Preview;
-
-
