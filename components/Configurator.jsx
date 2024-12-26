@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { exteriorSwatch, interiorSwatch, wheelSwatch } from "@/lib/swatch";
 
-function Configurator({ onChange }) {
+function Configurator({ onChange, exterior, interior, wheel }) {
   return (
     <>
       <h1 className="mb-4 text-4xl font-bold">Fisker Ocean</h1>
@@ -16,7 +16,7 @@ function Configurator({ onChange }) {
           {exteriorSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.id === 1 && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
+              className={`${swatch.name === exterior && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
               onClick={() => onChange("exterior", swatch.name)}
             >
               <Image
@@ -38,7 +38,7 @@ function Configurator({ onChange }) {
           {interiorSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.id === 0 && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
+              className={`${swatch.name === wheel && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
               onClick={() => onChange("interior", swatch.name)}
             >
               <Image
@@ -60,7 +60,7 @@ function Configurator({ onChange }) {
           {wheelSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.id === 0 && "ring"} ring-blue-300 duration-100 hover:scale-105`}
+              className={`${swatch.name === interior && "ring"} ring-blue-300 duration-100 hover:scale-105`}
               onClick={() => onChange("wheel", swatch.name)}
             >
               <Image
