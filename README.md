@@ -6,17 +6,16 @@ First, run the development server:
 
 ## Installation
 
-1- npm i bun
-# or
-2- ``` Linux & macOS ```  [ curl -fsSL https://bun.sh/install | bash ] 
-# or
-   ```Windows```[ powershell -c "irm bun.sh/install.ps1 | iex" ]      
-# or
-3- bunx create next-app@latest .  (current folder )
-# or
-4- bun run dev
 ```bash
+1- npm i bun
+2- ``` Linux & macOS ```  [ curl -fsSL https://bun.sh/install | bash ] 
+   ```Windows```[ powershell -c "irm bun.sh/install.ps1 | iex" ]      
+3- bunx create next-app@latest .  (current folder )
+4- bun run dev
+```
 
+
+```bash
 npm run dev
 # or
 yarn dev
