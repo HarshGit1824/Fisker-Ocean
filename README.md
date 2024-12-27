@@ -4,7 +4,15 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 First, run the development server:
 
+## Installation
+
+1- npm i bun
+2- ``` Linux & macOS ```  [ curl -fsSL https://bun.sh/install | bash ] 
+   ```Windows```[ powershell -c "irm bun.sh/install.ps1 | iex" ]      
+3- bunx create next-app@latest .  (current folder )
+4- bun run dev
 ```bash
+
 npm run dev
 # or
 yarn dev
